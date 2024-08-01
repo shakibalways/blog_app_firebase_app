@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
-class SignInPage extends StatefulWidget {
-  const SignInPage({super.key});
+class SignUpPage extends StatefulWidget {
+  const SignUpPage({super.key});
 
   @override
-  State<SignInPage> createState() => _SignInPageState();
+  State<SignUpPage> createState() => _SignUpPageState();
 }
 
-class _SignInPageState extends State<SignInPage> {
+class _SignUpPageState extends State<SignUpPage> {
   FirebaseAuth auth = FirebaseAuth.instance;
   bool showSpinner = false;
   TextEditingController emailController = TextEditingController();
@@ -35,7 +35,7 @@ class _SignInPageState extends State<SignInPage> {
 
           ),
           title: const Text(
-            "Create Account",
+            "Create Accounts",
             style: TextStyle(color: Colors.white),
           ),
           centerTitle: true,

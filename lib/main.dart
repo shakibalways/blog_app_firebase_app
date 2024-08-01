@@ -1,6 +1,5 @@
-import 'package:blog_app_with_firebase/auth/registers/sign_up.dart';
-import 'package:blog_app_with_firebase/view/screens/navi_page.dart';
-import 'package:blog_app_with_firebase/view/screens/page.dart';
+
+import 'package:blog_app_with_firebase/view/screens/splash_screen/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +11,7 @@ void main() async {
           appId: "1:382821376970:android:d098e92dd9827312bf6533",
           messagingSenderId: "382821376970",
           projectId: "blog-daily-app"));
-  runApp(BlogApp());
+  runApp(const BlogApp());
 }
 
 class BlogApp extends StatelessWidget {
@@ -22,7 +21,7 @@ class BlogApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SignInPage(),
+      home: SplashScreen(),
     );
   }
 }

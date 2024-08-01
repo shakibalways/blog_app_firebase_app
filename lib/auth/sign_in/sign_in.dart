@@ -1,4 +1,7 @@
+
+
 import 'package:blog_app_with_firebase/golobal_wieght/round_button.dart';
+import 'package:blog_app_with_firebase/view/screens/home_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -17,7 +20,6 @@ class _SignInPageState extends State<SignInPage> {
   TextEditingController userController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController passController = TextEditingController();
-
   final _formKey = GlobalKey<FormState>();
   String email = "";
   String password = "";
@@ -33,7 +35,7 @@ class _SignInPageState extends State<SignInPage> {
             Icons.arrow_back_rounded,
             color: Colors.white,
           ),
-          title: const Text(
+          title:  Text(
             "LogIn",
             style: TextStyle(color: Colors.white),
           ),
@@ -59,8 +61,9 @@ class _SignInPageState extends State<SignInPage> {
                         controller: emailController,
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
-                          // hintText: "User Name",
+                           hintText: "User Name",
                             labelText: "Email",
+                            prefixIcon: Icon(Icons.alternate_email),
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(20))),
                         onChanged: (String value) {
@@ -77,8 +80,9 @@ class _SignInPageState extends State<SignInPage> {
                         controller: passController,
                         obscureText: true,
                         decoration: InputDecoration(
-                          // hintText: "User Name",
+                           hintText: "User Name",
                             labelText: "Password",
+                            prefixIcon: Icon(Icons.password),
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(20))),
                         onChanged: (value) {
@@ -91,7 +95,7 @@ class _SignInPageState extends State<SignInPage> {
                     ],
                   )),
               RoundButton(
-                  title: "Register",
+                  title: "Login",
                   onPress: () async {
                     if (_formKey.currentState!.validate()) {
                       setState(() {
@@ -99,7 +103,7 @@ class _SignInPageState extends State<SignInPage> {
                         showSpinner =true;
                       });
                       try {
-                        final user = await auth.createUserWithEmailAndPassword(
+                        final user = await auth.signInWithEmailAndPassword(
                             email: email.toString().trim(),
                             password: password.toString().trim());
                         if (user != null) {
@@ -117,6 +121,7 @@ class _SignInPageState extends State<SignInPage> {
 
                           showSpinner =false;
                         });
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
                       }
                     }
                   },
