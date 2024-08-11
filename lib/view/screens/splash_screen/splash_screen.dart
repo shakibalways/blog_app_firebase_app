@@ -1,3 +1,5 @@
+
+
 import 'dart:async';
 
 import 'package:blog_app_with_firebase/view/screens/home_screen.dart';
@@ -21,21 +23,21 @@ class _SplashScreenState extends State<SplashScreen> {
     final user = auth.currentUser;
     if (user != null) {
       Timer(
-          Duration(seconds: 3),
+          const Duration(seconds: 3),
           () => Navigator.push(
-              context, MaterialPageRoute(builder: (context) => HomeScreen())));
+              context, MaterialPageRoute(builder: (context) => const HomeScreen())));
     } else {
       Timer(
-          Duration(seconds: 3),
+          const Duration(seconds: 3),
               () => Navigator.push(
-              context, MaterialPageRoute(builder: (context) =>NavigatorPage())));
+              context, MaterialPageRoute(builder: (context) =>const NavigatorPage())));
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff0a1e3d),
+      backgroundColor: const Color(0xff0a1e3d),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

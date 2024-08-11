@@ -1,7 +1,9 @@
 
+
 import 'package:blog_app_with_firebase/auth/registers/sign_up.dart';
 import 'package:blog_app_with_firebase/auth/sign_in/sign_in.dart';
 import 'package:blog_app_with_firebase/golobal_wieght/round_button.dart';
+
 import 'package:flutter/material.dart';
 
 class NavigatorPage extends StatefulWidget {
@@ -37,7 +39,7 @@ class _NavigatorPageState extends State<NavigatorPage> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const SignInPage()));
+                              builder: (context) =>  SignInPage()));
                     },
                     color: Colors.deepOrangeAccent,
                   ),
@@ -50,7 +52,7 @@ class _NavigatorPageState extends State<NavigatorPage> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const SignUpPage()));
+                              builder: (context) =>  SignUpPage()));
                     },
                     color: Colors.deepPurple,
                   ),

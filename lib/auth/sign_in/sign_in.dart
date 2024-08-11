@@ -1,5 +1,3 @@
-
-
 import 'package:blog_app_with_firebase/golobal_wieght/round_button.dart';
 import 'package:blog_app_with_firebase/view/screens/home_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -35,7 +33,7 @@ class _SignInPageState extends State<SignInPage> {
             Icons.arrow_back_rounded,
             color: Colors.white,
           ),
-          title:  Text(
+          title:  const Text(
             "LogIn",
             style: TextStyle(color: Colors.white),
           ),
@@ -46,7 +44,7 @@ class _SignInPageState extends State<SignInPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Text(
+              const Text(
                 "LogIn",
                 style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
               ),
@@ -54,7 +52,7 @@ class _SignInPageState extends State<SignInPage> {
                   key: _formKey,
                   child: Column(
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         height: 15,
                       ),
                       TextFormField(
@@ -63,7 +61,7 @@ class _SignInPageState extends State<SignInPage> {
                         decoration: InputDecoration(
                            hintText: "User Name",
                             labelText: "Email",
-                            prefixIcon: Icon(Icons.alternate_email),
+                            prefixIcon: const Icon(Icons.alternate_email),
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(20))),
                         onChanged: (String value) {
@@ -73,7 +71,7 @@ class _SignInPageState extends State<SignInPage> {
                           return value!.isEmpty ? "Enter Your Email" : null;
                         },
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 15,
                       ),
                       TextFormField(
@@ -82,7 +80,7 @@ class _SignInPageState extends State<SignInPage> {
                         decoration: InputDecoration(
                            hintText: "User Name",
                             labelText: "Password",
-                            prefixIcon: Icon(Icons.password),
+                            prefixIcon: const Icon(Icons.password),
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(20))),
                         onChanged: (value) {
@@ -113,6 +111,7 @@ class _SignInPageState extends State<SignInPage> {
 
                             showSpinner =false;
                           });
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>const HomeScreen()));
                         }
                       } catch (e) {
                         print(e.toString());
@@ -121,7 +120,7 @@ class _SignInPageState extends State<SignInPage> {
 
                           showSpinner =false;
                         });
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+
                       }
                     }
                   },
